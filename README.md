@@ -21,3 +21,8 @@ O sistema não deverá permitir a compra de eventos que já ocorreram;
 O sistema deverá permitir a atualização do ingresso por meio do organizador;  
 O sistema deverá listar os ingressos disponíveis para compra;  
 
+- **Usuario**
+O sistema deverá permitir que seja realizado o cadastro de um usuário;
+O sistema deverá permitir que seja possível atualizar um usuário;
+O sistema deverá permitir que seja possível excluir um usuário;
+O sistema deverá permitir listar todos os ingressos comprados pelo usuário;
