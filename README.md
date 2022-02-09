@@ -23,6 +23,7 @@ O sistema deverá listar os ingressos disponíveis para compra;
 
 - **Usuario**  
 O sistema deverá permitir que seja realizado o cadastro de um usuário;  
+O sistema não deverá permitir que seja realizado o cadastro de um usuário com o mesmo e-mail;  
 O sistema deverá permitir que seja possível atualizar um usuário;  
 O sistema deverá permitir que seja possível excluir um usuário;  
 O sistema deverá permitir listar todos os ingressos comprados pelo usuário;  
