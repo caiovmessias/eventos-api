@@ -31,6 +31,7 @@ export class CreateUsuariosIngressos1644464285835 implements MigrationInterface 
             {
               name: 'updated_at',
               type: 'timestamp',
+              default: 'now()',
             },
           ],
           foreignKeys: [

@@ -40,6 +40,7 @@ export class CreateEventos1644462668095 implements MigrationInterface {
           {
             name: 'updated_at',
             type: 'timestamp',
+            default: 'now()',
           },
         ],
         foreignKeys: [

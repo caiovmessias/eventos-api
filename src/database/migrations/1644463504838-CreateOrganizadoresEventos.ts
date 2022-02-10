@@ -31,6 +31,7 @@ import {MigrationInterface, QueryRunner, Table} from "typeorm";
             {
               name: 'updated_at',
               type: 'timestamp',
+              default: 'now()',
             },
           ],
           foreignKeys: [

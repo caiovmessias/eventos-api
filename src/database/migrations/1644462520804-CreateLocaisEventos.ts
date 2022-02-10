@@ -30,6 +30,7 @@ export class CreateLocaisEventos1644462520804 implements MigrationInterface {
             {
               name: 'updated_at',
               type: 'timestamp',
+              default: 'now()',
             },
           ]
         })
