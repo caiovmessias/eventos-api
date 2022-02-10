@@ -4,6 +4,7 @@ API Backend em Typescript para busca e compra de ingressos para eventos de empre
 ## Análise de Requisitos
 - **Organizador**  
 O sistema deverá permitir que seja cadastrado um organizador;  
+O sistema não deverá permitir que seja cadastrado um organizador com o mesmo nome;
 O sistema deverá permitir que seja atualizado um organizador;  
 O sistema deverá permitir que seja removido um organizador;  
 O sistema deverá listar os organizadores;  
