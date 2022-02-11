@@ -6,7 +6,7 @@ class ListAllOrganizadoresService {
 
     const repo = getRepository(Organizador);
 
-    const organizadores = repo.find();
+    const organizadores = await repo.find();
 
     return organizadores;
 

@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
 import { ListAllOrganizadoresService } from '../../services/Organizador/ListAllOrganizadoresService';
 
 class ListAllOrganizadoresController {
