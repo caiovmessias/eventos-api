@@ -1,12 +1,12 @@
 import { getRepository } from "typeorm";
 import { Organizador } from "../../entities/Organizador";
 
-interface IOrganizadoresRequest {
+interface IOrganizadorRequest {
   id: number;
 }
 
 class DeleteOrganizadorService {
-  async execute({ id }: IOrganizadoresRequest): Promise<Error | undefined> {
+  async execute({ id }: IOrganizadorRequest): Promise<Error | undefined> {
 
     const repo = getRepository(Organizador);
 
