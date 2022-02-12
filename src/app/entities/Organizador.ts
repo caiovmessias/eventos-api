@@ -3,7 +3,7 @@ import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedCol
 @Entity('organizadores')
 class Organizador {
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
   @Column()
   nome: string;

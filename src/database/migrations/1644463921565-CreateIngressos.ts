@@ -19,6 +19,11 @@ export class CreateIngressos1644463921565 implements MigrationInterface {
             isNullable: true
           },
           {
+            name: 'id_usuario',
+            type: 'int',
+            isNullable: true
+          },
+          {
             name: 'quantidade',
             type: 'int',
           },
@@ -44,6 +49,14 @@ export class CreateIngressos1644463921565 implements MigrationInterface {
             referencedTableName: 'eventos',
             referencedColumnNames: ['id'],
             columnNames: ['id_evento'],
+            onDelete: 'SET NULL',
+            onUpdate: 'SET NULL',
+          },
+          {
+            name: 'FKUsuario',
+            referencedTableName: 'usuarios',
+            referencedColumnNames: ['id'],
+            columnNames: ['id_usuario'],
             onDelete: 'SET NULL',
             onUpdate: 'SET NULL',
           },

@@ -1,17 +1,25 @@
 import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Evento } from './Evento';
+import { Usuario } from './Usuario';
 
 @Entity('ingressos')
 class Ingresso {
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
   @Column()
   id_evento: string;
 
   @ManyToOne(() => Evento)
   @JoinColumn({ name: 'id_evento' })
-  eventos: Evento;
+  evento: Evento;
+
+  @Column()
+  id_usuario: string;
+
+  @ManyToOne(() => Usuario)
+  @JoinColumn({ name: 'id_usuario' })
+  usuario: Usuario;
 
   @Column()
   quantidade: number;

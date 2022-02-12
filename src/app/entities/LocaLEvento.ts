@@ -3,7 +3,7 @@ import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedCol
 @Entity('locais_eventos')
 class LocaLEvento {
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
   @Column()
   endereco: string;

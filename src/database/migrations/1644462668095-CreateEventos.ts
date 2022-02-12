@@ -24,8 +24,14 @@ export class CreateEventos1644462668095 implements MigrationInterface {
             isNullable: true
           },
           {
+            name: 'id_organizador',
+            type: 'int',
+            isNullable: true
+          },
+          {
             name: 'data_hora_evento',
             type: 'timestamp',
+            isNullable: true
           },
           {
             name: 'status',
@@ -49,6 +55,14 @@ export class CreateEventos1644462668095 implements MigrationInterface {
             referencedTableName: 'locais_eventos',
             referencedColumnNames: ['id'],
             columnNames: ['id_local'],
+            onDelete: 'SET NULL',
+            onUpdate: 'SET NULL',
+          },
+          {
+            name: 'FKOrganizador',
+            referencedTableName: 'organizadores',
+            referencedColumnNames: ['id'],
+            columnNames: ['id_organizador'],
             onDelete: 'SET NULL',
             onUpdate: 'SET NULL',
           },

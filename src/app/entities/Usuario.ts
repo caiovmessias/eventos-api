@@ -1,10 +1,9 @@
-import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
-import { Ingresso } from './Ingresso';
+import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedColumn, } from 'typeorm';
 
 @Entity('usuarios')
 class Usuario {
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
   @Column()
   nome: string;
@@ -20,14 +19,6 @@ class Usuario {
   
   @Column()
   sexo: string;
-
-  @ManyToMany(() => Ingresso)
-  @JoinTable({
-    name: 'ingressos',
-    joinColumns: [{ name: 'id_ingresso' }],
-    inverseJoinColumns: [{ name: 'id_usuario' }],
-  })
-  ingressos: Ingresso[];
 
   @Column()
   status: boolean;

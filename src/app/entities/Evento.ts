@@ -1,29 +1,28 @@
-import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, } from 'typeorm';
 import { LocaLEvento } from './LocaLEvento';
 import { Organizador } from './Organizador';
 
 @Entity('eventos')
 class Evento {
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
   @Column()
   nome: string;
 
   @Column()
-  id_local: string;
+  id_local: number;
 
   @ManyToOne(() => LocaLEvento)
   @JoinColumn({ name: 'id_local' })
-  locaLEvento: LocaLEvento;
+  localEvento: LocaLEvento;
 
-  @ManyToMany(() => Organizador)
-  @JoinTable({
-    name: 'organizadores',
-    joinColumns: [{ name: 'id_organizador' }],
-    inverseJoinColumns: [{ name: 'id_evento' }],
-  })
-  organizadores: Organizador[];
+  @Column()
+  id_organizador: number;
+
+  @ManyToOne(() => Organizador)
+  @JoinColumn({ name: 'id_organizador' })
+  organizador: Organizador;
 
   @Column()
   data_hora_evento: boolean;

@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { ListAllEventosService } from '../../services/Evento/ListAllEventosService';
 
-class ListAllOrganizadoresController {
+class ListAllEventosController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const service = new ListAllEventosService();
@@ -15,4 +15,4 @@ class ListAllOrganizadoresController {
   }
 }
 
-export { ListAllOrganizadoresController }
+export { ListAllEventosController }
