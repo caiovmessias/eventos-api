@@ -19,12 +19,6 @@ class UpdateOrganizadorService {
     }
 
     if(nome) {
-      const organizadorNome = await repo.findOne({nome});
-
-      if(organizadorNome) {
-        return new Error('Nome already exists');
-      }
-
       organizador.nome = nome;
     }
 
@@ -35,7 +29,6 @@ class UpdateOrganizadorService {
     await repo.save(organizador);
 
     return organizador;
-
   }
 }
 

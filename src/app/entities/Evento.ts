@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, } from 'typeorm';
-import { LocaLEvento } from './LocaLEvento';
+import { LocalEvento } from './LocalEvento';
 import { Organizador } from './Organizador';
 
 @Entity('eventos')
@@ -13,9 +13,9 @@ class Evento {
   @Column()
   id_local: number;
 
-  @ManyToOne(() => LocaLEvento)
+  @ManyToOne(() => LocalEvento)
   @JoinColumn({ name: 'id_local' })
-  localEvento: LocaLEvento;
+  localEvento: LocalEvento;
 
   @Column()
   id_organizador: number;

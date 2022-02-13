@@ -6,7 +6,7 @@ interface IEventoRequest {
 }
 
 class ListEventoService {
-  async execute({ id }: IEventoRequest): Promise<Evento | Error> {
+  async execute({ id }: IEventoRequest): Promise<Evento | undefined> {
 
     const repo = getRepository(Evento);
 
@@ -16,10 +16,6 @@ class ListEventoService {
       },
       relations: ["localEvento", "organizador"],
     });
-
-    if (!evento) {
-      return new Error('Evento not found');
-    }
 
     return evento;
 

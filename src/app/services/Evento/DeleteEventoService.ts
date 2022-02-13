@@ -6,15 +6,9 @@ interface IEventoRequest {
 }
 
 class DeleteEventoService {
-  async execute({ id }: IEventoRequest): Promise<Error | undefined> {
+  async execute({ id }: IEventoRequest): Promise<void> {
 
     const repo = getRepository(Evento);
-
-    const evento = await repo.findOne(id);
-
-    if(!evento) {
-      return new Error('Evento Not Found');
-    }
 
     await repo.delete(id);
   }

@@ -10,12 +10,6 @@ class CreateOrganizadorService {
 
     const repo = getRepository(Organizador);
 
-    const organizadorAlreadyExists = await repo.findOne({nome});
-
-    if (organizadorAlreadyExists) {
-      return new Error('Organizador Already Exists');
-    }
-
     const organizador = repo.create({
       nome
     });

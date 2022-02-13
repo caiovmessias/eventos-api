@@ -1,6 +1,6 @@
 import { getRepository } from "typeorm";
 import { Evento } from "../../entities/Evento";
-import { LocaLEvento } from "../../entities/LocaLEvento";
+import { LocalEvento } from "../../entities/LocalEvento";
 import { Organizador } from "../../entities/Organizador";
 
 
@@ -24,36 +24,14 @@ class UpdateEventoService {
     }
 
     if(nome) {
-      const eventoNome = await repo.findOne({nome});
-
-      if(eventoNome) {
-        return new Error('Nome already exists');
-      }
-
       evento.nome = nome;
     }
 
     if(id_local) {
-      const repoLocalEvento = getRepository(LocaLEvento);
-
-      const localEventoAlreadyExists = await repoLocalEvento.findOne({id: id_local});
-
-      if(!localEventoAlreadyExists) {
-        return new Error(`Local Evento Not Found`);
-      }
-
       evento.id_local = id_local;
     }
 
     if(id_organizador) {
-      const repoOrganizador = getRepository(Organizador);
-
-      const organizadorAlreadyExists = await repoOrganizador.findOne({id: id_organizador});
-
-      if(!organizadorAlreadyExists) {
-        return new Error(`Organizador Not Found`);
-      }
-
       evento.id_organizador = id_organizador;
     }
 

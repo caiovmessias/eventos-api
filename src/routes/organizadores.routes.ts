@@ -4,6 +4,8 @@ import { ListAllOrganizadoresController } from '../app/controllers/Organizador/L
 import { ListOrganizadorController } from '../app/controllers/Organizador/ListOrganizadorController';
 import { UpdateOrganizadorController } from '../app/controllers/Organizador/UpdateOrganizadorController';
 import { DeleteOrganizadorController } from '../app/controllers/Organizador/DeleteOrganizadorController';
+import { OrganizadorExists } from '../app/middlewares/OrganizadorExists';
+import { NomeOrganizadorExists } from '../app/middlewares/NomeOrganizadorExists';
 
 const organizadoresRoutes = Router();
 
@@ -14,9 +16,9 @@ const updateOrganizadorController = new UpdateOrganizadorController();
 const deleteOrganizadorController = new DeleteOrganizadorController();
 
 organizadoresRoutes.get('/', listAllOrganizadoresController.handle);
-organizadoresRoutes.get('/:id', listOrganizadorController.handle);
-organizadoresRoutes.post('/', createOrganizadorController.handle);
-organizadoresRoutes.put('/:id', updateOrganizadorController.handle);
-organizadoresRoutes.delete('/:id', deleteOrganizadorController.handle);
+organizadoresRoutes.get('/:id', OrganizadorExists, listOrganizadorController.handle);
+organizadoresRoutes.post('/', NomeOrganizadorExists, createOrganizadorController.handle);
+organizadoresRoutes.put('/:id', OrganizadorExists, NomeOrganizadorExists, updateOrganizadorController.handle);
+organizadoresRoutes.delete('/:id', OrganizadorExists, deleteOrganizadorController.handle);
 
 export { organizadoresRoutes };

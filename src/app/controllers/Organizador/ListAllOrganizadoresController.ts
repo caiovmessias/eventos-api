@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
-import { ListAllEventosService } from '../../services/Evento/ListAllEventosService';
+import { ListAllOrganizadoresService } from '../../services/Organizador/ListAllOrganizadoresService';
 
 class ListAllOrganizadoresController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const service = new ListAllEventosService();
+      const service = new ListAllOrganizadoresService();
 
       const result = await service.execute();
       

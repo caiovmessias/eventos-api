@@ -6,15 +6,11 @@ interface IOrganizadorRequest {
 }
 
 class ListOrganizadorService {
-  async execute({ id }: IOrganizadorRequest): Promise<Organizador | Error> {
+  async execute({ id }: IOrganizadorRequest): Promise<Organizador | undefined> {
 
     const repo = getRepository(Organizador);
 
     const organizador = await repo.findOne(id);
-
-    if (!organizador) {
-      return new Error('Organizador not found');
-    }
 
     return organizador;
 

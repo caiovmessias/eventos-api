@@ -6,15 +6,9 @@ interface IOrganizadorRequest {
 }
 
 class DeleteOrganizadorService {
-  async execute({ id }: IOrganizadorRequest): Promise<Error | undefined> {
+  async execute({ id }: IOrganizadorRequest): Promise<void> {
 
     const repo = getRepository(Organizador);
-
-    const organizador = await repo.findOne(id);
-
-    if(!organizador) {
-      return new Error('Organizador Not Found');
-    }
 
     await repo.delete(id);
   }

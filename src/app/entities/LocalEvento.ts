@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, UpdateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('locais_eventos')
-class LocaLEvento {
+class LocalEvento {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -18,4 +18,4 @@ class LocaLEvento {
   updated_at: Date;
 }
 
-export { LocaLEvento };
+export { LocalEvento };
