@@ -1,9 +1,5 @@
 import { getRepository } from "typeorm";
 import { Evento } from "../../entities/Evento";
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc';
-import { Organizador } from "../../entities/Organizador";
-import { LocalEvento } from "../../entities/LocalEvento";
 
 interface IEventoRequest {
   nome: string;
@@ -12,10 +8,8 @@ interface IEventoRequest {
   status: boolean;
 }
 
-dayjs.extend(utc);
-
 class CreateEventoService {
-  async execute({ nome, id_local, id_organizador, status }: IEventoRequest): Promise<Evento | Error> {
+  async execute({ nome, id_local, id_organizador, status }: IEventoRequest): Promise<Evento> {
 
     const repoEvento = getRepository(Evento);
     

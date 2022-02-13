@@ -6,7 +6,7 @@ interface IOrganizadorRequest {
 }
 
 class CreateOrganizadorService {
-  async execute({ nome }: IOrganizadorRequest): Promise<Organizador | Error> {
+  async execute({ nome }: IOrganizadorRequest): Promise<Organizador> {
 
     const repo = getRepository(Organizador);
 
