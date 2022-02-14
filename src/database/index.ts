@@ -8,7 +8,7 @@ const getOptions = async () => {
     synchronize: false,
     logging: false,
     extra: {
-      ssl: true,
+      ssl: { rejectUnauthorized: false }
     },
     entities: [ "dist/app/entities/*.js" ],
   };
