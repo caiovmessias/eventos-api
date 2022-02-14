@@ -1,6 +1,8 @@
 # Eventos API
 API Backend em Typescript para busca e compra de ingressos para eventos de empresas e universidades
 
+<p><strong>URL do projeto em produção: https://caio-eventos-api.herokuapp.com/</strong>
+
 ## Execução
 
 Para executar o projeto em sua máquina é necessário possuir o Docker e o Docker compose instalados e configurados.
