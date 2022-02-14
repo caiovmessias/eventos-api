@@ -3,8 +3,8 @@
 # Instala as dependências do projeto e cria node_modules
 yarn
 
-# Cria banco de dados que será utilizado pelo projeto
-npx sequelize db:create
+# Cria banco de dados
+docker exec -it eventos-api_postgres_1 sh -c 'echo "CREATE DATABASE eventos;" | psql -U postgres'
 
 # Executa as migrations
-npx sequelize db:migrate
+yarn typeorm migration:run
