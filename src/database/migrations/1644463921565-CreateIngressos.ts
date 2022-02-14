@@ -27,11 +27,6 @@ export class CreateIngressos1644463921565 implements MigrationInterface {
             type: 'decimal',
           },
           {
-            name: 'status',
-            type: 'boolean',
-            default: true,
-          },
-          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

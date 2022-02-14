@@ -5,7 +5,7 @@ class UpdateOrganizadorController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const { id } = request.params;
-      const { nome, status } = request.body;
+      const { nome } = request.body;
 
       const idConvertido = Number(id);
     
@@ -14,7 +14,6 @@ class UpdateOrganizadorController {
       const result = await service.execute({ 
         id: idConvertido, 
         nome, 
-        status 
       });
       
       if(result instanceof Error) {

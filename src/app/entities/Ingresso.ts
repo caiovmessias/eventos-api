@@ -20,9 +20,6 @@ class Ingresso {
   @Column()
   preco: number;
 
-  @Column()
-  status: boolean;
-
   @CreateDateColumn()
   created_at: Date;
 

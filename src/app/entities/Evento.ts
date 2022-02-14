@@ -22,9 +22,6 @@ class Evento {
   @Column()
   data_hora_evento: Date;
 
-  @Column()
-  status: boolean;
-
   @CreateDateColumn()
   created_at: Date;
 

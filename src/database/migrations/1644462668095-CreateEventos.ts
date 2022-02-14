@@ -34,11 +34,6 @@ export class CreateEventos1644462668095 implements MigrationInterface {
             isNullable: true
           },
           {
-            name: 'status',
-            type: 'boolean',
-            default: true,
-          },
-          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

@@ -6,11 +6,10 @@ interface IEventoRequest {
   endereco: string;
   id_organizador: number;
   data_hora_evento: Date;
-  status: boolean;
 }
 
 class CreateEventoService {
-  async execute({ nome, endereco, id_organizador, data_hora_evento, status }: IEventoRequest): Promise<Evento> {
+  async execute({ nome, endereco, id_organizador, data_hora_evento }: IEventoRequest): Promise<Evento> {
 
     const repoEvento = getRepository(Evento);
     
@@ -19,7 +18,6 @@ class CreateEventoService {
       endereco, 
       id_organizador,
       data_hora_evento,
-      status,
     });
 
     await repoEvento.save(eventoCreated);

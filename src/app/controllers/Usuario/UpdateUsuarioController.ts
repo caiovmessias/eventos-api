@@ -5,7 +5,7 @@ class UpdateUsuarioController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const { id } = request.params;
-      const { nome, email, senha, data_nascimento, sexo, status } = request.body;
+      const { nome, email, senha, data_nascimento, sexo } = request.body;
 
       const idConvertido = Number(id);
 
@@ -18,7 +18,6 @@ class UpdateUsuarioController {
         senha, 
         data_nascimento, 
         sexo, 
-        status
       });
       
       if(result instanceof Error) {

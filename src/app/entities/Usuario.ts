@@ -20,9 +20,6 @@ class Usuario {
   @Column()
   sexo: string;
 
-  @Column()
-  status: boolean;
-
   @CreateDateColumn()
   created_at: Date;
 

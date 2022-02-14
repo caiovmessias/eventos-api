@@ -10,11 +10,10 @@ interface IUsuarioRequest {
   senha?: string;
   data_nascimento?: Date;
   sexo?: string;
-  status?: boolean;
 }
 
 class UpdateUsuarioService {
-  async execute({ id, nome, email, senha, data_nascimento, sexo, status }: IUsuarioRequest): Promise<Usuario | Error> {
+  async execute({ id, nome, email, senha, data_nascimento, sexo }: IUsuarioRequest): Promise<Usuario | Error> {
 
     const repo = getRepository(Usuario);
 
@@ -44,11 +43,6 @@ class UpdateUsuarioService {
 
     if(sexo) {
       usuario.sexo = sexo;
-    }
-
-
-    if(typeof status !== "undefined") {
-      usuario.status = status;
     }
 
     await repo.save(usuario);

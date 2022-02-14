@@ -19,11 +19,6 @@ export class CreateOrganizadores1644460818090 implements MigrationInterface {
               isUnique: true,
             },
             {
-              name: 'status',
-              type: 'boolean',
-              default: true,
-            },
-            {
               name: 'created_at',
               type: 'timestamp',
               default: 'now()',
