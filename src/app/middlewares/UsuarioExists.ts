@@ -16,6 +16,5 @@ export async function UsuarioExists(
   if(!usuario) {
     return response.status(400).json({ error: 'Usuario Not Found' });
   }
-
   return next();
 }

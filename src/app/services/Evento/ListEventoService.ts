@@ -14,7 +14,7 @@ class ListEventoService {
       where: {
         id: id,
       },
-      relations: ["localEvento", "organizador"],
+      relations: ["organizador"],
     });
 
     return evento;

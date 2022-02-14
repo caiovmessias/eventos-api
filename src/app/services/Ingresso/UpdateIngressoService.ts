@@ -5,7 +5,7 @@ import { Ingresso } from "../../entities/Ingresso";
 interface IIngressoRequest {
   id: number;
   nome?: string;
-  id_evento?: number;
+  id_evento: number;
   preco?: number;
   status?: boolean;
 }

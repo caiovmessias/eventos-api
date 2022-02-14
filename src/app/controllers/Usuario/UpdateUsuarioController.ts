@@ -8,7 +8,7 @@ class UpdateUsuarioController {
       const { nome, email, senha, data_nascimento, sexo, status } = request.body;
 
       const idConvertido = Number(id);
-    
+
       const service = new UpdateUsuarioService();
 
       const result = await service.execute({ 

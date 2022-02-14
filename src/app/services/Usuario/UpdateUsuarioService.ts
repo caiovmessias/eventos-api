@@ -6,7 +6,7 @@ import { hash } from 'bcrypt'
 interface IUsuarioRequest {
   id: number;
   nome?: string;
-  email?: string;
+  email: string;
   senha?: string;
   data_nascimento?: Date;
   sexo?: string;

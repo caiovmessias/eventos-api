@@ -10,7 +10,7 @@ class ListAllEventosService {
       where: {
         data_hora_evento: MoreThanOrEqual('now()')
       },
-      relations: ["localEvento", "organizador"],
+      relations: ["organizador"],
     });
 
     return eventos;

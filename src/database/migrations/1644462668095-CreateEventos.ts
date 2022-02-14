@@ -19,8 +19,8 @@ export class CreateEventos1644462668095 implements MigrationInterface {
             isUnique: true,
           },
           {
-            name: 'id_local',
-            type: 'int',
+            name: 'endereco',
+            type: 'varchar',
             isNullable: true
           },
           {
@@ -50,14 +50,6 @@ export class CreateEventos1644462668095 implements MigrationInterface {
           },
         ],
         foreignKeys: [
-          {
-            name: 'FKLocalEvento',
-            referencedTableName: 'locais_eventos',
-            referencedColumnNames: ['id'],
-            columnNames: ['id_local'],
-            onDelete: 'SET NULL',
-            onUpdate: 'SET NULL',
-          },
           {
             name: 'FKOrganizador',
             referencedTableName: 'organizadores',

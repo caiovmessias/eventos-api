@@ -18,9 +18,9 @@ export async function UsuarioAutenticado(
     return response.status(401).json({ error: 'Token Missing' });
   }
 
-  const [, token] = authHeader.split(' ');
-
   try {
+    const [, token] = authHeader.split(' ');
+
     const { sub: usuario_id } = verify(
       token,
       'aa33256bbdaea0f5adbfae7f45249c03',

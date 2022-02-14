@@ -5,13 +5,13 @@ import { Evento } from "../../entities/Evento";
 interface IEventoRequest {
   id: number;
   nome?: string;
-	id_local?: number;
-	id_organizador?: number;
+	endereco?: string;
+	id_organizador: number;
 	status?: boolean;
 }
 
 class UpdateEventoService {
-  async execute({ id, nome, status, id_local, id_organizador }: IEventoRequest): Promise<Evento | Error> {
+  async execute({ id, nome, status, endereco, id_organizador }: IEventoRequest): Promise<Evento | Error> {
 
     const repo = getRepository(Evento);
 
@@ -25,8 +25,8 @@ class UpdateEventoService {
       evento.nome = nome;
     }
 
-    if(id_local) {
-      evento.id_local = id_local;
+    if(endereco) {
+      evento.endereco = endereco;
     }
 
     if(id_organizador) {
