@@ -7,8 +7,8 @@ const getOptions = async () => {
     type: 'postgres',
     synchronize: false,
     logging: false,
-    extra: {
-      ssl: { rejectUnauthorized: false }
+    ssl: {
+      rejectUnauthorized: false
     },
     entities: [ "dist/app/entities/*.js" ],
   };
