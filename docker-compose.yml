@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  eventos_api:
+    build:
+      context: .
+      target: dev
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/application"
+  
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "12345678"
+    volumes:
+      - "/home/vagrant/services/data/postgres:/var/lib/postgresql/data"
+    ports:
+    - "5432:5432"
