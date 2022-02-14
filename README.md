@@ -19,10 +19,10 @@ Portas utilizadas pelo projeto:
 2. Acessa a pasta do projeto e suba o container do Postgres  
 `docker-compose up -d postgres`
 
-3. Cria o banco de dados `eventos`
+3. Cria o banco de dados `eventos`  
 `docker exec -it eventos-api_postgres_1 sh -c 'echo "CREATE DATABASE eventos;" | psql -U postgres'`
 
-4. Rode o comando abaixo para baixar as dependências e executar as migrations
+4. Rode o comando abaixo para instalar as dependências e executar as migrations  
 `make setup`
 
 5. Agora basta subir o container da API  
