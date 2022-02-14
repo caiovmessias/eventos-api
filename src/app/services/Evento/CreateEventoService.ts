@@ -5,11 +5,12 @@ interface IEventoRequest {
   nome: string;
   id_local: number;
   id_organizador: number;
+  data_hora_evento: Date;
   status: boolean;
 }
 
 class CreateEventoService {
-  async execute({ nome, id_local, id_organizador, status }: IEventoRequest): Promise<Evento> {
+  async execute({ nome, id_local, id_organizador, data_hora_evento, status }: IEventoRequest): Promise<Evento> {
 
     const repoEvento = getRepository(Evento);
     
@@ -17,6 +18,7 @@ class CreateEventoService {
       nome, 
       id_local, 
       id_organizador,
+      data_hora_evento,
       status,
     });
 

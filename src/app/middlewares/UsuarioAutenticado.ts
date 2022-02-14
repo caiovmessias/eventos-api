@@ -34,6 +34,10 @@ export async function UsuarioAutenticado(
       return response.status(401).json({ error: 'Usuario Not Found' });
     }
 
+    request.usuario = {
+      id: usuario_id
+    };
+
     return next();
   } catch {
     return response.status(401).json({ error: 'Invalid Token' });

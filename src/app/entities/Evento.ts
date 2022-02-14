@@ -25,7 +25,7 @@ class Evento {
   organizador: Organizador;
 
   @Column()
-  data_hora_evento: boolean;
+  data_hora_evento: Date;
 
   @Column()
   status: boolean;

@@ -5,6 +5,7 @@ import { ListAllEventosController } from '../app/controllers/Evento/ListAllEvent
 import { ListEventoController } from '../app/controllers/Evento/ListEventoController';
 import { UpdateEventoController } from '../app/controllers/Evento/UpdateEventoController';
 import { EventoExists } from '../app/middlewares/EventoExists';
+import { EventoOcurred } from '../app/middlewares/EventoOcurred';
 import { LocalEventoExists } from '../app/middlewares/LocalEventoExists';
 import { NomeEventoExists } from '../app/middlewares/NomeEventoExists';
 import { OrganizadorExists } from '../app/middlewares/OrganizadorExists';
@@ -21,7 +22,7 @@ const updateEventoController = new UpdateEventoController()
 eventosRoutes.get('/', listAllEventosController.handle);
 eventosRoutes.get('/:id', EventoExists, listEventoController.handle);
 eventosRoutes.post('/', LocalEventoExists, OrganizadorExists, NomeEventoExists, createEventoController.handle);
-eventosRoutes.put('/:id', EventoExists, LocalEventoExists, OrganizadorExists, NomeEventoExists, updateEventoController.handle);
+eventosRoutes.put('/:id', EventoExists, LocalEventoExists, OrganizadorExists, NomeEventoExists, EventoOcurred, updateEventoController.handle);
 eventosRoutes.delete('/:id', EventoExists, deleteEventoController.handle);
 
 

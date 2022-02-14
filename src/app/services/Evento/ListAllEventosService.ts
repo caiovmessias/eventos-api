@@ -1,4 +1,4 @@
-import { getRepository } from "typeorm";
+import { getRepository, MoreThanOrEqual } from "typeorm";
 import { Evento } from "../../entities/Evento";
 
 class ListAllEventosService {
@@ -7,6 +7,9 @@ class ListAllEventosService {
     const repo = getRepository(Evento);
 
     const eventos = await repo.find({
+      where: {
+        data_hora_evento: MoreThanOrEqual('now()')
+      },
       relations: ["localEvento", "organizador"],
     });
 
