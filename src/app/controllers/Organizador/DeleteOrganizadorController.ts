@@ -10,11 +10,7 @@ class DeleteOrganizadorController {
 
       const service = new DeleteOrganizadorService();
 
-      const result = await service.execute({ id: idConvertido });
-      
-      if(result instanceof Error) {
-        return response.status(400).json({ error: result.message });  
-      }
+      await service.execute({ id: idConvertido });
 
       return response.status(200).json();
     } catch (error) {
