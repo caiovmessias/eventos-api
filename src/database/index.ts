@@ -11,6 +11,7 @@ const getOptions = async () => {
       rejectUnauthorized: false
     },
     entities: [ "dist/app/entities/*.js" ],
+    migrations: [ "dist/database/migrations/*.js" ],
   };
   if (process.env.DATABASE_URL) {
     Object.assign(connectionOptions, { url: process.env.DATABASE_URL });
