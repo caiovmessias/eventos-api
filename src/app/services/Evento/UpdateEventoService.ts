@@ -1,7 +1,5 @@
 import { getRepository } from "typeorm";
 import { Evento } from "../../entities/Evento";
-import { LocalEvento } from "../../entities/LocalEvento";
-import { Organizador } from "../../entities/Organizador";
 
 
 interface IEventoRequest {

@@ -8,21 +8,17 @@ class Ingresso {
   id: number;
 
   @Column()
-  id_evento: string;
+  nome: string;
+
+  @Column()
+  id_evento: number;
 
   @ManyToOne(() => Evento)
   @JoinColumn({ name: 'id_evento' })
   evento: Evento;
 
   @Column()
-  id_usuario: string;
-
-  @ManyToOne(() => Usuario)
-  @JoinColumn({ name: 'id_usuario' })
-  usuario: Usuario;
-
-  @Column()
-  quantidade: number;
+  preco: number;
 
   @Column()
   status: boolean;

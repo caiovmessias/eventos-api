@@ -7,7 +7,7 @@ export async function EventoExists(
   response: Response,
   next: NextFunction,
 ) {
-  const { id } = request.params;
+  const id = request.body.id_evento !== undefined ? request.body.id_evento : request.params.id;
 
   const repo = getRepository(Evento);
 
