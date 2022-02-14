@@ -7,11 +7,10 @@ interface IIngressoRequest {
   nome?: string;
   id_evento: number;
   preco?: number;
-  status?: boolean;
 }
 
 class UpdateIngressoService {
-  async execute({ id, nome, status, id_evento, preco }: IIngressoRequest): Promise<Ingresso | Error> {
+  async execute({ id, nome, id_evento, preco }: IIngressoRequest): Promise<Ingresso | Error> {
 
     const repo = getRepository(Ingresso);
 
@@ -31,10 +30,6 @@ class UpdateIngressoService {
 
     if(preco) {
       ingresso.preco = preco;
-    }
-
-    if(typeof status !== "undefined") {
-      ingresso.status = status;
     }
 
     await repo.save(ingresso);

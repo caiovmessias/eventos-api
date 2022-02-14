@@ -4,11 +4,10 @@ import { Organizador } from "../../entities/Organizador";
 interface IOrganizadorRequest {
   id: number;
   nome?: string;
-  status?: boolean;
 }
 
 class UpdateOrganizadorService {
-  async execute({ id, nome, status }: IOrganizadorRequest): Promise<Organizador | Error> {
+  async execute({ id, nome }: IOrganizadorRequest): Promise<Organizador | Error> {
 
     const repo = getRepository(Organizador);
 
@@ -20,10 +19,6 @@ class UpdateOrganizadorService {
 
     if(nome) {
       organizador.nome = nome;
-    }
-
-    if(typeof status !== "undefined") {
-      organizador.status = status;
     }
 
     await repo.save(organizador);

@@ -4,11 +4,11 @@ import { CreateIngressoService } from '../../services/Ingresso/CreateIngressoSer
 class CreateIngressoController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
-      const { nome, id_evento, preco, status, } = request.body;
+      const { nome, id_evento, preco } = request.body;
     
       const service = new CreateIngressoService();
 
-      const result = await service.execute({ nome, id_evento, preco, status });
+      const result = await service.execute({ nome, id_evento, preco });
 
       return response.status(200).json(result);
     } catch (error) {

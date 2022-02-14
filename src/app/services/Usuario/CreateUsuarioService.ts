@@ -9,11 +9,10 @@ interface IUsuarioRequest {
   senha: string;
   data_nascimento: Date;
   sexo: string;
-  status: boolean;
 }
 
 class CreateUsuarioService {
-  async execute({ nome, email, senha, data_nascimento, sexo, status }: IUsuarioRequest): Promise<Usuario> {
+  async execute({ nome, email, senha, data_nascimento, sexo }: IUsuarioRequest): Promise<Usuario> {
 
     const repo = getRepository(Usuario);
     
@@ -25,7 +24,6 @@ class CreateUsuarioService {
       senha: senhaHash,
       data_nascimento,
       sexo,
-      status,
     });
 
     await repo.save(usuario);

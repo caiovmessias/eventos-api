@@ -5,7 +5,7 @@ class UpdateIngressoController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const { id } = request.params;
-      const { nome, status, id_evento, preco } = request.body;
+      const { nome, id_evento, preco } = request.body;
 
       const idConvertido = Number(id);
     
@@ -14,7 +14,6 @@ class UpdateIngressoController {
       const result = await service.execute({ 
         id: idConvertido, 
         nome, 
-        status,
         id_evento,
         preco
       });

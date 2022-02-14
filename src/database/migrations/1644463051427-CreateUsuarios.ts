@@ -36,11 +36,6 @@ import {MigrationInterface, QueryRunner, Table} from "typeorm";
               length: "1",
             },
             {
-              name: 'status',
-              type: 'boolean',
-              default: true,
-            },
-            {
               name: 'created_at',
               type: 'timestamp',
               default: 'now()',

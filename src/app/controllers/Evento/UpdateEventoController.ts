@@ -6,7 +6,7 @@ class UpdateEventoController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const { id } = request.params;
-      const { nome, status, endereco, id_organizador } = request.body;
+      const { nome, endereco, id_organizador } = request.body;
 
       const idConvertido = Number(id);
     
@@ -15,7 +15,6 @@ class UpdateEventoController {
       const result = await service.execute({ 
         id: idConvertido, 
         nome, 
-        status,
         endereco,
         id_organizador
       });

@@ -8,9 +8,6 @@ class Organizador {
   @Column()
   nome: string;
 
-  @Column()
-  status: boolean;
-
   @CreateDateColumn()
   created_at: Date;
 

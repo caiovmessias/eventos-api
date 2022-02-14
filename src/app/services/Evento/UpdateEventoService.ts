@@ -7,11 +7,10 @@ interface IEventoRequest {
   nome?: string;
 	endereco?: string;
 	id_organizador: number;
-	status?: boolean;
 }
 
 class UpdateEventoService {
-  async execute({ id, nome, status, endereco, id_organizador }: IEventoRequest): Promise<Evento | Error> {
+  async execute({ id, nome, endereco, id_organizador }: IEventoRequest): Promise<Evento | Error> {
 
     const repo = getRepository(Evento);
 
@@ -31,10 +30,6 @@ class UpdateEventoService {
 
     if(id_organizador) {
       evento.id_organizador = id_organizador;
-    }
-
-    if(typeof status !== "undefined") {
-      evento.status = status;
     }
 
     await repo.save(evento);
