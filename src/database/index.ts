@@ -25,7 +25,10 @@ const getOptions = async () => {
 const connect2Database = async (): Promise<void> => {
     const typeormconfig = await getOptions();
     const connection = await createConnection(typeormconfig);
-    await connection.runMigrations();
+    if(process.env.NODE_ENV === 'production') {
+      console.log('Run Migrations in Production');
+      await connection.runMigrations();
+    }
 };
 
 connect2Database().then(async () => {
